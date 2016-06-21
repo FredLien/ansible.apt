@@ -1,0 +1,15 @@
+---
+- name: Managing APT packages
+  apt:
+#    state= "{{ item.state }}"
+      #name={{ item.name }}
+      name={{ item }}
+      force=yes
+  when: "ansible_system == 'Linux'"
+  sudo: true
+  #with_items: apt_packages
+  with_items: apt
+  #tags:
+  #  - apt
+
+
